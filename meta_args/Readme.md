@@ -1,6 +1,6 @@
 # Terraform — Meta-arguments (deep dive)
 
-Nice — meta-arguments are one of the most powerful parts of Terraform. They let you control *how* Terraform creates and manages blocks (resources, modules), rather than *what* attributes those blocks have. Below I explain the key meta-arguments in depth, cover best practices and pitfalls, and then give you a set of practice challenges (with hints/outlines) so you can test your skills.
+Meta-arguments are one of the most powerful parts of Terraform. They let you control *how* Terraform creates and manages blocks (resources, modules), rather than *what* attributes those blocks have. Below will explain the key meta-arguments in depth, cover best practices and pitfalls, and then give you a set of practice challenges (with hints/outlines) so you can test your skills.
 
 ---
 
@@ -366,4 +366,5 @@ Create instances using `for_each`.
 * Ignore external attribute changes → `ignore_changes`. Document why.
 * Need strict ordering not inferred from attributes → `depends_on`.
 * Multiple providers/accounts/regions → alias providers + `provider = aws.alias` or module `providers` map.
+
 
