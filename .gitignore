@@ -1,0 +1,7 @@
+meta_args/.terraform/providers/registry.terraform.io/hashicorp/local/2.6.1/windows_386/LICENSE.txt
+meta_args/.terraform/providers/registry.terraform.io/hashicorp/local/2.6.1/windows_386/terraform-provider-local_v2.6.1_x5.exe
+meta_args/.terraform/providers/registry.terraform.io/hashicorp/random/3.7.2/windows_386/LICENSE.txt
+meta_args/.terraform/providers/registry.terraform.io/hashicorp/random/3.7.2/windows_386/terraform-provider-random_v3.7.2_x5.exe
+meta_args/.terraform.lock.hcl
+meta_args/terraform.tfstate
+meta_args/terraform.tfstate.backup
