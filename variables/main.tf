@@ -12,18 +12,18 @@ terraform {
   }
 }
 
-resource "random_password" "mypwd" {
-  length = var.pwd_length
-}
-variable "pwd_length" {
-  type = number
-  default = 9
-}
+# resource "random_password" "mypwd" {
+#   length = var.pwd_length
+# }
+# variable "pwd_length" {
+#   type = number
+#   default = 9
+# }
 
-output "generated_password" {
-  value     = random_password.mypwd.result
-  sensitive = true
-}
+# output "generated_password" {
+#   value     = random_password.mypwd.result
+#   sensitive = true
+# }
 
 
 ##🧩 Challenge 2: Create a local file from user input (local provider)
@@ -33,24 +33,24 @@ output "generated_password" {
 # Create file dynamically using local_file
 
 
-resource "local_file" "user_file" {
-  filename = var.user_filename
-  content  = var.user_message
-}
+# resource "local_file" "user_file" {
+#   filename = var.user_filename
+#   content  = var.user_message
+# }
 
-variable "user_filename" {
-  type        = string
-  description = "Enter the filename to create (e.g., output.txt)"
-}
+# variable "user_filename" {
+#   type        = string
+#   description = "Enter the filename to create (e.g., output.txt)"
+# }
 
-variable "user_message" {
-  type        = string
-  description = "Enter the message to write to the file"
-}   
+# variable "user_message" {
+#   type        = string
+#   description = "Enter the message to write to the file"
+# }   
 
-output "file" {
-  value = "File name is ${local_file.user_file.filename}: Content is ${local_file.user_file.content}"  
-}
+# output "file" {
+#   value = "File name is ${local_file.user_file.filename}: Content is ${local_file.user_file.content}"  
+# }
 
 
 # Challenge 3: Create 3 files using list variable
@@ -72,8 +72,5 @@ resource "local_file" "multiple_files" {
 
 output "multiple_files_output" {
   value = { for k, v in local_file.multiple_files : k => "${v.content}" }   
-}
 
-output "multiple_files_names" {
-  value = { for x, y in local_file.multiple_files : x => "${y.filename} has id ${y.id}" }
 }
